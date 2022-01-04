@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for the MetaApp",
+  "main": "server.js",
+  "repository": "https://github.com/rkr-dev/metaapp-backend",
+  "author": "Rinil Kunhiraman",
+  "license": "MIT",
+  "private": true,
+  "scripts": {}
+}
