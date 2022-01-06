@@ -4,8 +4,10 @@ import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
+import { connectMongo } from './config/db.js'
 
 const app = express()
+connectMongo()
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
@@ -22,7 +24,7 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 5000
 
 const server = app.listen(PORT, () => {
-  console.log(`Server started running on port ${PORT}`)
+  console.log(`$$ ~ Server started running on port ${PORT}`)
 })
 
 process.on('UnhandledRejection', (err, promise) => {
