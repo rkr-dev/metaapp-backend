@@ -5,6 +5,7 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
 import { connectMongo } from './config/db.js'
+import { errorHandler } from './middlewares/error.js'
 
 const app = express()
 connectMongo()
@@ -20,6 +21,9 @@ app.use(cookieParser())
 app.get('/', (req, res) => {
   res.json({ message: 'Hello from the root route' })
 })
+
+
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 
